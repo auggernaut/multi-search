@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            .frame {
+                width: 49vw;
+                height: 92vh;
+                position: relative;
+                float: left;
+            }
+            #jiraFrame, #confluenceFrame {
+                width: 49vw;
+                height: 92vh;
+            }
+            #inputRow {
+                padding-bottom: 10px;
+            }
+            input {
+                width: 300px;
+                height: 20px;
+                padding: 20px;
+                font-size: 20px; 
+            }
+        </style>
+        <script>
+            function load(){
+                var input = document.getElementById("searchInput");
+                input.addEventListener("keyup", function(event) {
+                    // Number 13 is the "Enter" key on the keyboard
+                    if (event.keyCode === 13) {
+                        // Cancel the default action, if needed
+                        event.preventDefault();
+                        document.getElementById("jiraFrame").src = 'https://scribdjira.atlassian.net/secure/QuickSearch.jspa?searchString=' + input.value;
+                        document.getElementById("confluenceFrame").src = 'https://scribdjira.atlassian.net/wiki/dosearchsite.action?cql=siteSearch+~+"' + input.value + '"';
+                    }
+                });
+            }
+        </script>
+    </head>
+<body onload="load()">
+    <div id='inputRow'>
+        <input id='searchInput' placeholder="Search">
+    </div>
+    <div class='frame'>
+        <!-- <h1 id='jiraLink'>jira</h1> -->
+        <iframe id="jiraFrame" src='https://scribdjira.atlassian.net/secure/QuickSearch.jspa'></iframe>
+    </div>
+    <div class='frame'>
+        <!-- <h1 id='confluenceLink'>confluence</h1> -->
+        <iframe id="confluenceFrame" src='https://scribdjira.atlassian.net/wiki/dosearchsite.action"'></iframe>
+    </div>
+</body>
+</html>
