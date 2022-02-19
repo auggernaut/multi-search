@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+
+  "name": "Multi Search",
+  "description": "Let's you see the results of multiple search engines side-by-side.",
+  "version": "1.1",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "omnibox": { "keyword" : "ss" },
+  "host_permissions": [
+    "*://*.google.com/",
+    "*://*.duckduckgo.com/",
+    "*://*.brave.com/"
+  ],
+  "permissions": [
+    "declarativeNetRequest",
+    "tabs"
+  ]
+}
+

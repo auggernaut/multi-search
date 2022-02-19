@@ -1,22 +1,24 @@
-# Jirence
+# Multi-Search
 
-Search both Jira and Confluence at the same time.
+Search multiple search engines at the same time.
+
+## WARNING
+
+Due to cross-domain restrictions this Chrome extension filters out the x-frame and csp headers from requests to _only_ these domains:
+* https://search.brave.com/*
+* https://www.google.com/*
+* https://duckduckgo.com/*
+
 
 ## Install
-
-Due to cross-domain restrictions you'll need to install a Chrome extension to get this to work. For security reasons, this extension _only_ filters out the x-frame and csp headers  from requests to scribdjira.atlassian.net.
 
 To install the extension
 * Windows -> Extensions
 * Toggle Developer Mode
 * Load Unpacked Extension
-* Select the ignoreXFrameHeaders dir
+* Select the multi-search dir
 
 
-## Run
+## Usage
 
-```
-python -m SimpleHTTPServer 8005
-```
-
-Go to: http://localhost:8005
+Type 'ss' plus a search term into the Omnibox to open multi-search in new tab.
