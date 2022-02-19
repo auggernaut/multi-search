@@ -2,7 +2,7 @@
 const iframeHosts = [
   'google.com',
   'duckduckgo.com',
-  'brave.com'
+  'search.brave.com'
 ];
 chrome.runtime.onInstalled.addListener(() => {
   chrome.declarativeNetRequest.updateDynamicRules({
@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(() => {
         responseHeaders: [
           {header: 'X-Frame-Options', operation: 'remove'},
           {header: 'Frame-Options', operation: 'remove'},
-          {header: 'content-security-policy', operation: 'remove'}
+          {header: 'Content-Security-Policy', operation: 'remove'}
         ],
       },
     })),
