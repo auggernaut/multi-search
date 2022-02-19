@@ -12,6 +12,12 @@ input.addEventListener("keyup", function(event) {
 
 function updateSearch(searchString){
     document.getElementById("googleFrame").src = 'https://www.google.com/search?q=' + searchString;
-    document.getElementById("braveFrame").src = 'https://search.brave.com/search?q=' + searchString;
+    // document.getElementById("braveFrame").src = 'https://search.brave.com/search?q=' + searchString;
     document.getElementById("ddGoFrame").src = 'https://duckduckgo.com/?q=' + searchString;
 }
+
+var port = chrome.runtime.connect({ name: "sink" });
+port.onMessage.addListener(function (msg) {
+    input.value = msg;
+    window.location = msg;
+});

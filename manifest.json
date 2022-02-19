@@ -13,6 +13,11 @@
     "*://*.duckduckgo.com/",
     "*://*.brave.com/"
   ],
+  "content_scripts": [{
+    "js": ["content.js"],
+    "matches": ["<all_urls>"],
+    "all_frames": true
+  }],
   "permissions": [
     "declarativeNetRequest",
     "tabs"
