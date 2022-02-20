@@ -18,6 +18,5 @@ function updateSearch(searchString){
 
 var port = chrome.runtime.connect({ name: "sink" });
 port.onMessage.addListener(function (msg) {
-    input.value = msg;
-    window.location = msg;
+    window.open(msg, '_self');
 });
