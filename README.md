@@ -4,7 +4,7 @@ Search multiple search engines at the same time.
 
 ## WARNING
 
-Due to cross-domain restrictions this Chrome extension filters out the x-frame and csp headers from requests to _only_ these domains:
+Due to cross-domain restrictions this Chrome extension must filter out x-frame and csp headers in order to function properly. However it _only_ filters requests to these domains:
 * https://search.brave.com/*
 * https://www.google.com/*
 * https://duckduckgo.com/*
